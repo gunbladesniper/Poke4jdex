@@ -14,16 +14,15 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../react_client/public')));
 app.use(express.static(path.join(__dirname, '../react_client/dist')));
 
-app.get('/app', (req, res)=>{
+app.get('/pokemon', (req, res)=>{
 	console.log('get is happening?')
-	session.run('MATCH (n:TYPE) RETURN n LIMIT 25')
+	session.run('MATCH (n:POKEMON) RETURN n')
 	.then((results)=>{
-		console.log(results.records)
-		driver.close()
+		console.log(results.records[3]._fields)
 		res.sendFile(path.resolve(__dirname,'..', 'react_client','public','index.html'));
 	})
 	.catch((err)=>{
-		console.log('you fucked up', err);
+		console.log('you messed up', err);
 	})
 })
 
