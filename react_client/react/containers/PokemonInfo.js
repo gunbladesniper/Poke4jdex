@@ -7,11 +7,13 @@ import EggGroups from '../components/PokemonInfo/EggGroups.js';
 function PokemonInfo(props){
 	return (
 		<div className='info-holder'>
-			<Types />
-			{props.evolvesTo && props.evolvesTo!== 'null' && <Evolutions evolveTo ='thing'/>}
-			{props.evolvesFrom && props.evolvesFrom !== 'null' && <Evolutions evolveFrom='thing'/>}
-			<Stats />
-			<EggGroups />
+			<span>{props.pokemon.name}</span>
+			<img src={`images/${props.pokemon.name.toLowerCase()}.png`}/>
+			<Types pokemon={props.pokemon}/>
+			{props.pokemon.evolvesTo && props.pokemon.evolvesTo!== 'null' && <Evolutions evolvesTo ={props.pokemon.evolvesTo} pokemon={props.pokemon}/>}
+			{props.pokemon.evolvesFrom && props.pokemon.evolvesFrom !== 'null' && <Evolutions evolvesFrom={props.pokemon.evolvesFrom} pokemon={props.pokemon}/>}
+			<Stats pokemon={props.pokemon} />
+			<EggGroups pokemon={props.pokemon} />
 		</div>
 	)
 }

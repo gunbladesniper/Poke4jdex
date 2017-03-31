@@ -1,3 +1,23 @@
 .test {
 font-family: fantasy;
 }
+
+.pokeinfo-flex {
+	display: flex;
+	flex-wrap: wrap;
+	height: 500px;
+	width: 900px;
+}
+.info-holder{
+	margin: 10px;
+	border: 1px solid red;
+	flex: 1;
+}
+
+.type-header{
+	display: flex;
+}
+
+.type-div{
+	flex:1;
+}

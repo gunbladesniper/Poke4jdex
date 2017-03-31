@@ -3,8 +3,8 @@ import React from 'react';
 function Types(props){
  return(
  	<div>
- 		{props.evolveTo && <div className="evolve-to">Evoles To</div>}
- 		{props.evolveFrom && <div className="evolve-from">Evolves from</div>}
+ 		{props.evolvesTo && <div className="evolve-to">{props.pokemon.name}</div>}
+ 		{props.evolvesFrom && <div className="evolve-from">{props.pokemon.name}</div>}
  	</div>
  )
 }
