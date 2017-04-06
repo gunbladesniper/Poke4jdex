@@ -1,5 +1,7 @@
 .test {
 font-family: fantasy;
+display: flex;
+flex-direction: column;
 }
 
 .pokeinfo-flex {
@@ -7,17 +9,59 @@ font-family: fantasy;
 	flex-wrap: wrap;
 	height: 500px;
 	width: 900px;
-}
-.info-holder{
-	margin: 10px;
-	border: 1px solid red;
+	overflow: scroll;
 	flex: 1;
+	align-self: center;
+	justify-content: space-around;
 }
 
+.pokemon-image{
+	height: 100px;
+	width: 100px;
+	flex: 2;
+}
+
+.pokemon-name{
+	flex:1;
+}
 .type-header{
 	display: flex;
+	flex-direction: row;
+	flex: 1;
+	justify-content: space-around;
+}
+.info-holder{
+	border: 1px solid red;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
+}
+.poke-header{
+	flex: 1;
+	display: flex;
+	justify-content: center;
 }
 
+.poke-types {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.type-button{
+	margin-right: 1px;
+	border: 1px solid black;
+	border-radius: 50%;
+	width: 110px;
+	text-align: center;
+}
+
+
 .type-div{
-	flex:1;
+	flex: 1;
+}
+.stat-container{
+	flex: 1;
 }

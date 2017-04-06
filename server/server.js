@@ -17,7 +17,6 @@ app.use(express.static(path.join(__dirname, '../react_client/dist')));
 app.get('/types',(req, res)=>{
 	session.run('MATCH (n:TYPE) RETURN n')
 	.then((results)=>{
-		console.log('this is types', results)
 		res.send(results.records);
 	})
 	.catch((err)=>{
@@ -26,7 +25,6 @@ app.get('/types',(req, res)=>{
 })
 
 app.get('/pokemon', (req, res)=>{
-	console.log('get is happening?')
 	session.run('MATCH (n:POKEMON) RETURN n ORDER BY toInt(n.pokedexId)')
 	.then((results)=>{
 		res.send(results.records);
